@@ -8,17 +8,18 @@ OPENGL特有のライブラリで、リンクエラーがあるものは消しても動くはず。
 #include <math.h>
 #include <iostream>
 #include "struct_1.h"
-
+#include <string>
 int main()
 {
+	
 	struct_1 st;
-
-	st.a.num = 5;
-	//printf(" a.num = %d\n", st.a.num);
-	st.prCreatePtObj("myObj", 5);
-	//st.test("myObj", 5);
-
-	return 0;
+	struct_1 *p;
+	p = new struct_1();
+	p->pt_alloc("test", 5);
+	std::cout << p->data.name << std::endl;
+	std::string str;
+	std::cin >> str;
+	return 1;
 
 }
 /*作成->g1232219@tcu.ac.jp*/
