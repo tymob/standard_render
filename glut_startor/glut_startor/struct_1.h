@@ -9,14 +9,15 @@ public:
 	typedef struct prPoints {
 		int num;
 		char *name;
-		float *xyz;
-		float *color;
-		float *normal;
-		float *val;
+		float xyz;
+		float color;
+		float normal;
+		float val;
 	} prPoints;
 
-	prPoints *b;
+	prPoints b;
 	prPoints a;
-	prPoints *prCreatePtObj(char *, int);
+	prPoints prCreatePtObj(char *, int);
+	void struct_1::test(char *name, int num);
 };
 

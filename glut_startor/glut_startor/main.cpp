@@ -14,8 +14,11 @@ int main()
 	struct_1 st;
 
 	st.a.num = 5;
-	printf(" a.num = %d\n", st.a.num);
-	st.prCreatePtObj("myObj", 5);
+	//printf(" a.num = %d\n", st.a.num);
+	//st.prCreatePtObj("myObj", 5);
+	st.test("myObj", 5);
+
 	return 0;
+
 }
 /*ì¬->g1232219@tcu.ac.jp*/

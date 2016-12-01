@@ -6,10 +6,17 @@ struct_1::struct_1()
 {
 }
 
-struct_1::prPoints *prCreatePtObj(char *name, int num)
+struct_1::prPoints prCreatePtObj(char *name, int num)
 {
 	std::cout << num << std::endl;
-	return 0;
+	return struct_1::prPoints{
+	num,name,1.0,1.0,1.0,1.0
+	};
+}
+
+void test(char *name, int num)
+{
+	std::cout << num << std::endl;
 }
 
 struct_1::~struct_1()
