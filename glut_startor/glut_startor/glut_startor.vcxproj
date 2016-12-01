@@ -80,9 +80,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="primitive.cpp" />
     <ClCompile Include="struct_1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="primitive.h" />
     <ClInclude Include="struct_1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

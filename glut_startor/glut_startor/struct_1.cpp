@@ -20,7 +20,57 @@ void struct_1::pt_alloc(char *name, int num)
 	data.normal = (float *)malloc(num * sizeof(float) * 3);
 	data.val = (float *)malloc(num * sizeof(float) * 1);
 }
-
+int struct_1::datapos(int length,int num, int order)
+//length is member length.ex xyz is 3. val is 1. order should be 0,1,2
+{
+	return length*num + order;
+}
+void struct_1::set_xyz(int num, float x, float y, float z)
+{
+	
+	data.xyz[datapos(3, num, 0)] = x;
+	data.xyz[datapos(3, num, 1)] = y;
+	data.xyz[datapos(3, num, 2)] = z;
+}
+//void struct_1::set_color(int num, float r, float g, float b);
+//void struct_1::set_normal(int num, float nx, float ny, float nz);
+//void struct_1::set_val(int num, float v1);
 struct_1::~struct_1()
 {
+}
+double struct_1::degree_to_rad(float degree)
+{
+	return degree*M_PI / 180;
+}
+void struct_1::default_sphere()
+{
+	float x=1;
+	float y = 2;
+	float r = 3;
+	float z = 0;
+	float flat_r = 0;//—ÖØ‚èã‚Ìr
+	pt_alloc("sphere", 20*20);
+	//‚±‚±‚©‚ç—ÖØ‚è
+	for (int cut = 0; cut < 20; cut++)
+	{
+		//‰~’Œ‚É‚È‚ç‚È‚¢‚½‚ß‚ÉZ,r‚ğŒvZ
+		z = -r + ((2 * r / 20)*z + 0.5);//20‚Å‚Ì’[”‚Ì‚½‚ß‚É0.5
+		flat_r = sqrt(r*r - z*z);
+		for (int circle = 0; circle < 20; circle++)//—ÖØ‚è‚Ì—Ê
+		{
+			float degree = circle * 360 / 20;//20 should max value.
+			float tmp_pos_x = x + flat_r*cos(degree_to_rad(degree));
+			float tmp_pos_y = y + flat_r*cos(degree_to_rad(degree));
+			float tmp_pos_z = z;
+			data.xyz[datapos(3, cut * 20 + circle, 0)] = tmp_pos_x;//setX
+			data.xyz[datapos(3, cut * 20 + circle, 1)] = tmp_pos_y;//setY
+			data.xyz[datapos(3, cut * 20 + circle, 2)] = tmp_pos_z;//setZ
+
+			//TESTÀ‘•
+			data.color[datapos(3, cut * 20 + circle, 0)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
+			data.color[datapos(3, cut * 20 + circle, 1)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
+			data.color[datapos(3, cut * 20 + circle, 2)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
+		}
+	}
+	
 }
