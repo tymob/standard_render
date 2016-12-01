@@ -18,6 +18,6 @@ public:
 	prPoints b;
 	prPoints a;
 	prPoints prCreatePtObj(char *, int);
-	void struct_1::test(char *name, int num);
+	void test(char *name, int num);
 };
 

@@ -15,8 +15,8 @@ int main()
 
 	st.a.num = 5;
 	//printf(" a.num = %d\n", st.a.num);
-	//st.prCreatePtObj("myObj", 5);
-	st.test("myObj", 5);
+	st.prCreatePtObj("myObj", 5);
+	//st.test("myObj", 5);
 
 	return 0;
 
