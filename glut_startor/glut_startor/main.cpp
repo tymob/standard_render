@@ -7,10 +7,15 @@ OPENGL特有のライブラリで、リンクエラーがあるものは消しても動くはず。
 #include <glut.h>
 #include <math.h>
 #include <iostream>
+#include "struct_1.h"
 
 int main()
 {
-	printf("Test\n");
+	struct_1 st;
+
+	st.a.num = 5;
+	printf(" a.num = %d\n", st.a.num);
+	st.prCreatePtObj("myObj", 5);
 	return 0;
 }
 /*作成->g1232219@tcu.ac.jp*/

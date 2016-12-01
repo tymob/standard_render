@@ -1,3 +1,4 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (glut_startar.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\glut_startor\Debug\glut_startor.exe
-  glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\glut_startor\Debug\glut_startor.pdb (Full PDB)
+  main.cpp
+main.obj : error LNK2019: unresolved external symbol "public: struct struct_1::prPoints * __thiscall struct_1::prCreatePtObj(char *,int)" (?prCreatePtObj@struct_1@@QAEPAUprPoints@1@PADH@Z) referenced in function _main
+C:\Users\T\Documents\GitHub\standard_render\glut_startor\Debug\glut_startor.exe : fatal error LNK1120: 1 unresolved externals
