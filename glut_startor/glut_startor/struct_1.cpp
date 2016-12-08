@@ -77,3 +77,4 @@ void struct_1::default_sphere()
 	}
 	
 }
+/*sphere*/
