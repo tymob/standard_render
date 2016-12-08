@@ -2,6 +2,6 @@
   struct_1.cpp
 c:\users\t\documents\github\standard_render\glut_startor\glut_startor\struct_1.cpp(43): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 c:\users\t\documents\github\standard_render\glut_startor\glut_startor\struct_1.cpp(57): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\t\documents\github\standard_render\glut_startor\glut_startor\struct_1.cpp(61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\t\documents\github\standard_render\glut_startor\glut_startor\struct_1.cpp(64): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\Debug\glut_startor.exe
   glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\Debug\glut_startor.pdb (Full PDB)

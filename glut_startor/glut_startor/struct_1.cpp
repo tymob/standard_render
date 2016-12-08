@@ -54,7 +54,10 @@ void struct_1::default_sphere()
 	for (int cut = 0; cut < 20; cut++)
 	{
 		//‰~’Œ‚É‚È‚ç‚È‚¢‚½‚ß‚ÉZ,r‚ðŒvŽZ
-		z = -r + ((2 * r / 20)*cut + 0.5);//20‚Å‚Ì’[”‚Ì‚½‚ß‚É0.5
+		z = -r + ((2 * r / 20)*(cut + 0.5));//20‚Å‚Ì’[”‚Ì‚½‚ß‚É0.5
+		std::cout << "z=" << -r << "((2*" << r << "/20)*(" << cut << "+0.5))" << std::endl;
+		std::cout << "z=" << (2 * r / 20) << "*" << (cut + 0.5) << std::endl;
+		std::cout << z << std::endl;
 		flat_r = sqrt(abs(r*r - z*z));
 		for (int circle = 0; circle < 20; circle++)//—ÖØ‚è‚Ì—Ê
 		{
