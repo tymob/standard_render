@@ -38,7 +38,7 @@ void struct_1::set_xyz(int num, float x, float y, float z)
 struct_1::~struct_1()
 {
 }
-double struct_1::degree_to_rad(float degree)
+float struct_1::degree_to_rad(float degree)
 {
 	return degree*M_PI / 180;
 }
@@ -49,18 +49,18 @@ void struct_1::default_sphere()
 	float r = 3;
 	float z = 0;
 	float flat_r = 0;//輪切り上のr
-	pt_alloc("sphere", 20*20);
+	pt_alloc("sphere", 20*20);//球のポイントをすべて取る
 	//ここから輪切り
 	for (int cut = 0; cut < 20; cut++)
 	{
 		//円柱にならないためにZ,rを計算
 		z = -r + ((2 * r / 20)*z + 0.5);//20での端数のために0.5
-		flat_r = sqrt(r*r - z*z);
+		flat_r = sqrt(abs(r*r - z*z));
 		for (int circle = 0; circle < 20; circle++)//輪切りの量
 		{
 			float degree = circle * 360 / 20;//20 should max value.
 			float tmp_pos_x = x + flat_r*cos(degree_to_rad(degree));
-			float tmp_pos_y = y + flat_r*cos(degree_to_rad(degree));
+			float tmp_pos_y = y + flat_r*sin(degree_to_rad(degree));
 			float tmp_pos_z = z;
 			data.xyz[datapos(3, cut * 20 + circle, 0)] = tmp_pos_x;//setX
 			data.xyz[datapos(3, cut * 20 + circle, 1)] = tmp_pos_y;//setY

@@ -28,6 +28,6 @@ public:
 	void default_sphere();
 
 	//calc
-	double degree_to_rad(float degree);
+	float degree_to_rad(float degree);
 };
 
