@@ -79,12 +79,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Frame_Buffer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="stencil_buffer.cpp" />
     <ClCompile Include="struct_1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Frame_Buffer.h" />
     <ClInclude Include="primitive.h" />
+    <ClInclude Include="stencil_buffer.h" />
     <ClInclude Include="struct_1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
