@@ -82,16 +82,20 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Frame_Buffer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix.cpp" />
     <ClCompile Include="my_math.cpp" />
     <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="render.cpp" />
     <ClCompile Include="stencil_buffer.cpp" />
     <ClCompile Include="struct_1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
     <ClInclude Include="Frame_Buffer.h" />
+    <ClInclude Include="matrix.h" />
     <ClInclude Include="my_math.h" />
     <ClInclude Include="primitive.h" />
+    <ClInclude Include="render.h" />
     <ClInclude Include="stencil_buffer.h" />
     <ClInclude Include="struct_1.h" />
   </ItemGroup>

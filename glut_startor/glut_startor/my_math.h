@@ -23,15 +23,18 @@ typedef struct mat4_4 {
 	vec4 r4;
 } mat4_4;
 
+
 class my_math
 {
 public:
 	my_math();
 	~my_math();
 	mat4_4 reset(mat4_4 m);
-	vec3 norm(vec3 v);
+	float norm(vec3 v);
 	vec3 v_munis(vec3 v1, vec3 v2);
-	vec3 cross(vec3 v1,vec3 vec2);
+	float cross(vec3 v1,vec3 vec2);
+	vec3 dot(vec3 v1, vec3 v2);
+	vec3 vec3_divide_scalar(vec3 v1, float scalar);
 
 	
 
