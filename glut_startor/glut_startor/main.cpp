@@ -28,7 +28,7 @@ int main()
 
 	p2 = new struct_1();
 	p2->default_sphere();
-	mat4_4 view_matrix =camera.set_camera_value(vec3{ 1,1,1 }, vec3{ 3, 2, 1 }, vec3{ 1,2,1 });
+	mat4_4 view_matrix =camera.set_camera_value(vec3{ 3,0,0 }, vec3{ 0, 0, 0 }, vec3{ 0,0,0 });
 	points_converted = new struct_1();
 	*points_converted = render.convert(view_matrix, p2);
 	std::ofstream ofs("Test_moved.csv"); //ファイル出力ストリーム
