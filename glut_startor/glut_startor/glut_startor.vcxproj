@@ -79,6 +79,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Frame_Buffer.cpp" />
     <ClCompile Include="main.cpp" />
@@ -90,6 +91,7 @@
     <ClCompile Include="struct_1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bitmap.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="Frame_Buffer.h" />
     <ClInclude Include="matrix.h" />
