@@ -1,4 +1,6 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (glut_startar.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main.cpp
+  Frame_Buffer.cpp
+c:\users\t\documents\github\standard_render\glut_startor\glut_startor\frame_buffer.cpp(48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\t\documents\github\standard_render\glut_startor\glut_startor\frame_buffer.cpp(49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\Debug\glut_startor.exe
   glut_startor.vcxproj -> C:\Users\T\Documents\GitHub\standard_render\glut_startor\Debug\glut_startor.pdb (Full PDB)

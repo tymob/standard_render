@@ -53,10 +53,10 @@ void Frame_Buffer::Point_to_2D(float view_width,float view_height,float z_front,
 		{		
 			std::cout << "not clip" << std::endl;
 			if (frame.z_buffer[point_count] < tmp_z) { frame.z_buffer[point_count] = tmp_z; }//z_buffer‚Ì‘OŒã
-			frame.RGBA[x_pos*y_pos] = data->data.color[point.datapos(3, point_count, 1)];//R
-			frame.RGBA[x_pos*y_pos + frame.width*frame.height] = data->data.color[point.datapos(3, point_count, 2)];//G
-			frame.RGBA[x_pos*y_pos + frame.width*frame.height * 2] = data->data.color[point.datapos(3, point_count, 3)];//B
-			frame.RGBA[x_pos*y_pos + frame.width*frame.height * 3] = 0;//A
+			frame.RGBA[x_pos+y_pos*frame.width] = data->data.color[point.datapos(3, point_count, 1)];//R
+			frame.RGBA[x_pos + y_pos*frame.width + frame.width*frame.height] = data->data.color[point.datapos(3, point_count, 2)];//G
+			frame.RGBA[x_pos + y_pos*frame.width + frame.width*frame.height * 2] = data->data.color[point.datapos(3, point_count, 3)];//B
+			frame.RGBA[x_pos + y_pos*frame.width + frame.width*frame.height * 3] = 0;//A
 		}
 	}
 }
