@@ -21,7 +21,7 @@ void struct_1::pt_alloc(char *name, int num)
 	data.val = (float *)malloc(num * sizeof(float) * 1);
 }
 int struct_1::datapos(int length,int num, int order)
-//length is member length.ex xyz is 3. val is 1. order should be 0,1,2
+//length is member length. ex... xyz is 3. val is 1. order should be 0,1,2
 {
 	return length*num + order;
 }
