@@ -20,6 +20,10 @@ float my_math::norm(vec3 v)
 	vector_value = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 	return vector_value;
 }
+float my_math::nomarlize(float n, vec3 v)
+{
+	return n / (v.x*v.x + v.y*v.y + v.z*v.z);
+}
 vec3 my_math::v_munis(vec3 v1,vec3 v2)
 {
 	return vec3{ v1.y*v2.z - v1.z*v2.y,  v1.z* v2.x - v1.x*v2.z, v1.x*v2.y - v1.y*v2.x };

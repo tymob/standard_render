@@ -82,6 +82,7 @@
     <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Frame_Buffer.cpp" />
+    <ClCompile Include="lighting.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix.cpp" />
     <ClCompile Include="my_math.cpp" />
@@ -94,6 +95,7 @@
     <ClInclude Include="bitmap.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="Frame_Buffer.h" />
+    <ClInclude Include="lighting.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="my_math.h" />
     <ClInclude Include="primitive.h" />

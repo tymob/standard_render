@@ -12,6 +12,8 @@ OPENGL特有のライブラリで、リンクエラーがあるものは消しても動くはず。
 #include <fstream>
 #include "render.h"
 #include "Frame_Buffer.h"
+#include "bitmap.h"
+#include "lighting.h"
 int main()
 {
 	
@@ -23,6 +25,8 @@ int main()
 	render render;
 	Frame_Buffer frame_buffer;
 	my_math m;
+	bitmap bitmap;
+	lighting lighting;
  	p = new struct_1();
 	float view_width = 20;
 	float view_height = 20;
@@ -33,10 +37,12 @@ int main()
 	std::cout << p->data.xyz[p->datapos(3, 2, 0)] << std::endl;
 
 	p2 = new struct_1();
-	p2->default_sphere();
-	mat4_4 view_matrix =camera.set_camera_value(vec3{ 0,1,0 }, vec3{ 2,4, 0}, vec3{ 2,4,5 });//z dicide camera vector
+	p2->default_sphere(100);
+
+	mat4_4 view_matrix =camera.set_camera_value(vec3{0,1,0}, vec3{2,4,0}, vec3{ 2,4,5 });//z dicide camera vector
 	points_converted = new struct_1();
 	*points_converted = render.convert(view_matrix, p2);
+	*points_converted = lighting.diffuse(points_converted);
 	std::ofstream ofs("Test_moved3.csv"); //ファイル出力ストリーム
 	/*
 	for (int i = 0; i < 400; i++)
@@ -49,11 +55,15 @@ int main()
 	fb -> frame_alloc(500, 500);
 	fb->z_alloc(500, 500);
 	fb->Point_to_2D(view_width, view_height, z_front, z_back, points_converted);
+	
 	for (int i = 0; i < fb->frame.width*fb->frame.height; i++)
 	{
 		 ofs << fb->frame.RGBA[i] << std::endl; //"<<"で流し込むだけ
 	}
-
+	bitmap.reset();
+	bitmap.set(500, 500);
+	bitmap.write_binary(fb->frame.RGBA, "test.bmp");//一文字=<'>
+	
 
 	return 1;
 

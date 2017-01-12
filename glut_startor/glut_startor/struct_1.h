@@ -25,7 +25,7 @@ public:
 	void pt_alloc(char *name, int num);//必要数のポイントをallocする。
 	void test(char *name, int num);
 	int datapos(int length, int num, int order);
-	void default_sphere();
+	void default_sphere(int point_num);
 
 	//calc
 	float degree_to_rad(float degree);

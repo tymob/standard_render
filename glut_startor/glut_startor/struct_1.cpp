@@ -42,37 +42,37 @@ float struct_1::degree_to_rad(float degree)
 {
 	return degree*M_PI / 180;
 }
-void struct_1::default_sphere()
+void struct_1::default_sphere(int point_num)
 {
 	float x=1;
 	float y = 2;
 	float r = 3;
 	float z = 0;
 	float flat_r = 0;//輪切り上のr
-	pt_alloc("sphere", 20*20);//球のポイントをすべて取る
+	pt_alloc("sphere", point_num*point_num);//球のポイントをすべて取る
 	//ここから輪切り
-	for (int cut = 0; cut < 20; cut++)
+	for (int cut = 0; cut < point_num; cut++)
 	{
 		//円柱にならないためにZ,rを計算
-		z = -r + ((2 * r / 20)*(cut + 0.5));//20での端数のために0.5
-		std::cout << "z=" << -r << "((2*" << r << "/20)*(" << cut << "+0.5))" << std::endl;
-		std::cout << "z=" << (2 * r / 20) << "*" << (cut + 0.5) << std::endl;
+		z = -r + ((2 * r / point_num)*(cut + 0.5));//point_numでの端数のために0.5
+		std::cout << "z=" << -r << "((2*" << r << "/point_num)*(" << cut << "+0.5))" << std::endl;
+		std::cout << "z=" << (2 * r / point_num) << "*" << (cut + 0.5) << std::endl;
 		std::cout << z << std::endl;
 		flat_r = sqrt(abs(r*r - z*z));
-		for (int circle = 0; circle < 20; circle++)//輪切りの量
+		for (int circle = 0; circle < point_num; circle++)//輪切りの量
 		{
-			float degree = circle * 360 / 20;//20 should max value.
+			float degree = circle * 360 / point_num;//point_num should max value.
 			float tmp_pos_x = x + flat_r*cos(degree_to_rad(degree));
 			float tmp_pos_y = y + flat_r*sin(degree_to_rad(degree));
 			float tmp_pos_z = z;
-			data.xyz[datapos(3, cut * 20 + circle, 0)] = tmp_pos_x;//setX
-			data.xyz[datapos(3, cut * 20 + circle, 1)] = tmp_pos_y;//setY
-			data.xyz[datapos(3, cut * 20 + circle, 2)] = tmp_pos_z;//setZ
+			data.xyz[datapos(3, cut * point_num + circle, 0)] = tmp_pos_x;//setX
+			data.xyz[datapos(3, cut * point_num + circle, 1)] = tmp_pos_y;//setY
+			data.xyz[datapos(3, cut * point_num + circle, 2)] = tmp_pos_z;//setZ
 
 			//TEST実装
-			data.color[datapos(3, cut * 20 + circle, 0)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
-			data.color[datapos(3, cut * 20 + circle, 1)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
-			data.color[datapos(3, cut * 20 + circle, 2)] = data.xyz[0] + data.xyz[1] + data.xyz[2];
+			data.color[datapos(3, cut * point_num + circle, 0)] = 1;
+			data.color[datapos(3, cut * point_num + circle, 1)] = 0;
+			data.color[datapos(3, cut * point_num + circle, 2)] = 0.3;
 		}
 	}
 	

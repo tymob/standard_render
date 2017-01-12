@@ -31,6 +31,7 @@ public:
 	~my_math();
 	mat4_4 reset(mat4_4 m);
 	float norm(vec3 v);
+	float nomarlize(float n, vec3 v);
 	vec3 v_munis(vec3 v1, vec3 v2);
 	float cross(vec3 v1,vec3 vec2);
 	vec3 dot(vec3 v1, vec3 v2);
